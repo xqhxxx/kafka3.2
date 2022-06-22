@@ -1,6 +1,6 @@
 # kafka2.13_3.2
 
-虚拟机：192.168.4.0  
+虚拟机：192.168.0.4
 /home/app/kafka_2.13-3.2.0
 
 使用Kraft 启动  不用zk
@@ -17,10 +17,13 @@ config/kraft/server.properties
 2 用kafka-storage.sh 格式化存储数据的目录
 #每个节点都要执行
 
-./bin/kafka-storage.sh format -t uR3lppBRQKCfGLw9hhV5GA  -c ./config/kraft/server.properties
+./bin/kafka-storage.sh format -t 6ZR7p7uLQ1-MKJkYeNIqJg  -c ./config/kraft/server.properties
+
+--虚拟机注意修改 advertised.listeners=PLAINTEXT://192.168.0.4:9092
 
 3 用bin/kafka-server-start.sh 启动Kafka Server
 ./bin/kafka-server-start.sh ./config/kraft/server.properties
 
 4创建测试topic
 ./bin/kafka-topics.sh --bootstrap-server 192.168.0.4:9092 --create --topic firstTestTopic --replication-factor 1 --partitions 2  
+
