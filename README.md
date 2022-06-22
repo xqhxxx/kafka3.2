@@ -5,7 +5,6 @@
 
 使用Kraft 启动  不用zk
 
-
 参考：https://blog.csdn.net/qq_47658874/article/details/122730520
 一、基于KRaft启动
 config/kraft/server.properties
